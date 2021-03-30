@@ -4,7 +4,7 @@ red=`tput setaf 1`
 reset=`tput sgr0`
 green=`tput setaf 2`
 set -e
-restartScript=$(readlink -f "$0")
+restartScript=$(greadlink -f "$0")
 
 export SERVER_NAME="Schlags Party Time Server"
 export WORLD_NAME="Oridiath"
@@ -52,7 +52,7 @@ if [ -d "$(pwd)/data" ]; then
     startServer 2>&1 | tee .output
     if [[ "$(cat .output && rm .output)" =~ "The container name \"/valheim\" is already in use" ]]; then 
         echo "${red}ERROR: Server likely already running. We can try again after removing the container...${reset}"
-        read -p "Would you like gracefully stop and remove the container in use now? (Y/N)" -n 1 -r
+        read -q "REPLY?Would you like gracefully stop and remove the container in use now? (Y/N)"
         echo
         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
             echo "${red}Exiting...${reset}"
