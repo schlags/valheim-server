@@ -11,6 +11,8 @@ export CONTAINER_TAG=$1
 function updateImage()
 {
     docker build -t schlags/valheim:$CONTAINER_TAG -t schlags/valheim:latest . --no-cache
+    docker push schlags/valheim:latest
+    docker push schlags/valheim:$CONTAINER_TAG
 }
 
 if [ -f $1 ]; then
