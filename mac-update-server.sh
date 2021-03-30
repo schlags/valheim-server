@@ -10,11 +10,11 @@ export CONTAINER_TAG=$1
 
 function updateImage()
 {
-    docker build -t schlags/valheim:$CONTAINER_TAG . --no-cache
+    docker build -t schlags/valheim:$CONTAINER_TAG -t schlags/valheim:latest . --no-cache
 }
 
 if [ -f $1 ]; then
-    echo "${red}ERROR: No version number provided. Please specify a version number after the script call.${reset}"
+    echo "${red}ERROR: No custom tag provided. Please specify a version number or descriptive tag after the script call.${reset}"
     echo "Usage: \n    ./mac-update-server.sh VERSION"
     exit
 fi
