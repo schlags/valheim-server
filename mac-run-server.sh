@@ -38,13 +38,15 @@ function startServer()
 }
 
 echo "${green}---Start Valheim Dedicated Server---${reset}"
-echo "  Ensuring latest docker image is available..."
-docker pull schlags/valheim:latest
+
 if [ -f $1 ]; then
     echo "${red}ERROR: No password provided. Please enter the server password value after the script call!${reset}"
     echo "Usage: \n    ./mac-run-server.sh PASSWORD"
     exit
 fi
+
+echo "  Ensuring latest docker image is available..."
+docker pull schlags/valheim:latest
 
 echo "  $(pwd) is your current working directory."
 
