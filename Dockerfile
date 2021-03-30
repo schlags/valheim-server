@@ -18,7 +18,7 @@ ENV VALHEIM_PORT 2456
 # you must set values to the server and world name otherwise the container will exit immediately
 ENV VALHEIM_SERVER_NAME=""
 ENV VALHEIM_WORLD_NAME=""
-ENV VALHEIM_PASSWORD ""
+ENV VALHEIM_PASSWORD=""
 
 # the server needs these 3 ports exposed by default
 EXPOSE 2456/udp
