@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+red=`tput setaf 1`
+reset=`tput sgr0`
+green=`tput setaf 2`
+set -e
+restartScript=$(readlink -f "$0")
+
+export CONTAINER_TAG=$1
+
+function updateImage()
+{
+    docker build -t schlags/valheim:$CONTAINER_TAG . --no-cache
+}
+
+if [ -f $1 ]; then
+    echo "${red}ERROR: No version number provided. Please specify a version number after the script call.${reset}"
+    echo "Usage: \n    ./mac-update-server.sh VERSION"
+    exit
+fi
+
+echo "  ${green}Updating image: schlags/valheim:$CONTAINER_TAG${reset}"
+updateImage
