@@ -61,7 +61,7 @@ if [ -d "$(pwd)/data" ]; then
         docker stop valheim && docker rm valheim
         exec "$restartScript" "$VALHEIM_PASSWORD"
     fi
-    echo "${green}Server running!${reset}\n$(docker logs valheim | tail -n 4)"
+    echo "${green}Server started! You can exit the script now if you'd like. :)${reset}\n$(docker logs valheim | tail -n 4)"
     echo "Following logs... Press CTRL+C to exit."
     tail -n 10 -f $(pwd)/data/valheim-logs.txt
 else
