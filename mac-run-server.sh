@@ -52,7 +52,7 @@ if [ -d "$(pwd)/data" ]; then
     startServer 2>&1 | tee .output
     if [[ "$(cat .output && rm .output)" =~ "The container name \"/valheim\" is already in use" ]]; then 
         echo "${red}ERROR: Server likely already running. We can try again after removing the container...${reset}"
-        read -q "REPLY?Would you like gracefully stop and remove the container in use now? (Y/N)"
+        read -p "Would you like gracefully stop and remove the container in use now? (Y/N)" -n 1 -r
         echo
         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
             echo "${red}Exiting...${reset}"
