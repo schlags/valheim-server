@@ -7,5 +7,5 @@ This repository is mainly for version control of my server configuration as well
 
 _______
 
-_Massive thanks to @sethmachine for the amazing documentation for his incredible documentation about this process [here](https://www.sethmachine.io/2021/02/11/host-valheim-with-docker/)_
+_Massive thanks to @sethmachine for the amazing documentation about this process [here](https://www.sethmachine.io/2021/02/11/host-valheim-with-docker/)_
 
