@@ -4,7 +4,7 @@ red=`tput setaf 1`
 reset=`tput sgr0`
 green=`tput setaf 2`
 set -e
-restartScript=$(readlink -f "$0")
+restartScript=$(greadlink -f "$0")
 
 export CONTAINER_TAG=$1
 
